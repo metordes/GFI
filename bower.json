@@ -1,0 +1,22 @@
+{
+  "name": "bower",
+  "homepage": "https://github.com/metordes/GFI",
+  "authors": [
+    "Mercedes Tordesillas <metordes@gmail.com>"
+  ],
+  "description": "bower json",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.14",
+    "bootstrap": "3.0.0"
+  }
+}
