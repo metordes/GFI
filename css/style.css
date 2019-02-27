@@ -1,0 +1,45 @@
+body{
+    background-color: powderblue;
+    margin: 10px
+}
+button{
+    border-radius: 8px;
+    outline: none;
+}
+input{
+    border-radius: 5px;
+    outline: none;
+}
+ul{
+    list-style: none;
+}
+.buscar{
+    background-color: #28a745;
+    border-color:#28a745;
+  
+}
+
+.error{
+    color:red;
+}
+.favorito_activo{
+    background-color: goldenrod;
+    border-color: transparent
+}
+.favorito_desactivo{
+    background-color: #f7d2d2;
+    border-color: transparent
+}
+.resultado{
+    margin-top: 20px;
+}
+
+#favoritos ul{
+    list-style-image: url("https://mdn.mozillademos.org/files/11981/starsolid.gif")
+}
+#sesion{
+    margin-bottom: 50px;
+}
+#sesion input{
+    margin-right: 5px;
+}

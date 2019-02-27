@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="PruebaTecnicaApp">
+<head>
+    <meta charset="utf-8">
+    <title>Prueba  tecnica</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"> </script>
+</head>
+<body>
+    <div ng-controller="PeliculaController">
+        <div id="sesion" class="d-flex justify-content-end">
+            <input type="text" ng-model="usuario" placeholder="usuario">
+            <input type="password" ng-model="pass" placeholder="pass">
+            <button class="btn btn-secondary btn-sm" ng-click="iniciar_sesion();" >Iniciar sesion</button>
+        </div>
+
+        <div class="row">
+            <div id="buscar" class="col-md-6">
+                <input type="text" ng-model="nombre_pelicula">
+                <button class="buscar" ng-click="buscarPelicula();">Buscar</button>
+                <button ng-class="{'favorito_activo' : bPelicula, 'favorito_desactivo': !bPelicula}" ng-disabled="!bPelicula" ng-click="addFavorito(obj_pelicula.Title) || bPelicula">Añadir a favoritos</button>
+    
+                <div class="resultado row" ng-show="bPelicula">
+                    <img class="col-md-6" ng-src={{obj_pelicula.Poster}}>
+                    <ul class="col-md-6"> 
+                        <li ng-repeat="(key, value) in obj_pelicula" ng-show="key != 'Poster'" > 
+                           <b>{{key}}</b> - {{value}}
+                        </li>
+                    </ul>
+                </div>
+                <p class="error" ng-show="!bPelicula">{{ error_buscar }}</p>
+            </div>
+        
+            <div id="favoritos" class="col-md-6">
+                <h4 >Películas guardadas como favoritas</h4>
+                <ul>
+                    <li ng-repeat="items in arFavoritos">
+                        {{items}}
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>  
+    <script src="js/pelicula_controller.js"></script>
+    <script src="js/pelicula_service.js"></script>
+    <script src="js/usuarios_service.js"></script>
+</body>
+</html>
